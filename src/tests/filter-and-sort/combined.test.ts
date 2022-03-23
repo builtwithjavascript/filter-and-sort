@@ -1,16 +1,16 @@
 import { useFilterAndSort } from '@/filter-and-sort'
-import { ITestDataItem, getTestData } from '../test-data'
+import { ITestDataItem, getTestData } from './test-data'
 
-describe('id', () => {
-  const { filterAndSort } = useFilterAndSort<ITestDataItem>()
+describe('filterAndOrder', () => {
+  const { filterAndOrder } = useFilterAndSort<ITestDataItem>()
 
-  it('should filter by "e" and sort by name descending', () => {
+  it('should filter by "e" and order by name descending', () => {
     const propertyToSortBy = 'name'
     const direction = -1
     const filterText = 'e'
     const items = getTestData()
 
-    const filteredAndSorted = filterAndSort({
+    const filteredAndSorted = filterAndOrder({
       items,
       filterText,
       propertiesToFilter: ['name', 'address'],
@@ -23,13 +23,13 @@ describe('id', () => {
     expect(filteredAndSorted[1].id).toEqual(2)
   })
 
-  it('should filter by "z" and sort by name descending', () => {
+  it('should filter by "z" and order by name descending', () => {
     const propertyToSortBy = 'name'
     const direction = -1
     const filterText = 'z'
     const items = getTestData()
 
-    const filteredAndSorted = filterAndSort({
+    const filteredAndSorted = filterAndOrder({
       items,
       filterText,
       propertiesToFilter: ['name', 'address'],

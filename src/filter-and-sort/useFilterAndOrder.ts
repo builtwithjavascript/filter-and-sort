@@ -1,9 +1,9 @@
 import { useFilter } from './useFilter'
-import { useSort } from './useSort'
+import { useOrderBy } from './useOrderBy'
 
-export const useCombined = <T = void>() => {
+export const useFilterAndOrder = <T = void>() => {
   const filter = useFilter<T>()
-  const sort = useSort<T>()
+  const sort = useOrderBy<T>()
 
   return (args: {
     items: T[]
@@ -26,10 +26,10 @@ export const useCombined = <T = void>() => {
       })
     }
 
-    return sort({
-      items: filtered,
+    return sort(
+      filtered,
       propertyToSortBy,
-      direction: args.direction
-    })
+      args.direction
+    )
   }
 }

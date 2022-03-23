@@ -1,11 +1,11 @@
 import { useFilter } from './useFilter'
-import { useSort } from './useSort'
-import { useCombined } from './useCombined'
+import { useOrderBy } from './useOrderBy'
+import { useFilterAndOrder } from './useFilterAndOrder'
 
 export const useFilterAndSort = <T = void>() => {
   return {
+    orderBy: useOrderBy<T>(),
     filter: useFilter<T>(),
-    sort: useSort<T>(),
-    filterAndSort: useCombined<T>()
+    filterAndOrder: useFilterAndOrder<T>()
   }
 }

@@ -1,7 +1,7 @@
 import { useFilterAndSort } from '@/filter-and-sort'
-import { ITestDataItem, getTestData } from '../test-data'
+import { ITestDataItem, getTestData } from './test-data'
 
-describe('id', () => {
+describe('filter', () => {
   const { filter } = useFilterAndSort<ITestDataItem>()
 
   it('should filter by "e"', () => {
