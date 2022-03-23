@@ -1,7 +1,7 @@
 export const useOrderBy = <T = void>() => {
   return (values: T[], propertyToSortBy: string, direction: number = 1): T[] => {
     // first time this might be unsorted, so default to ascending
-    const sortDirection = isNaN(direction as any) ? 1 : Number(direction !== 0 ? direction : 1) 
+    const sortDirection = isNaN(direction as any) ? 1 : Number(direction !== 0 ? direction : 1)
 
     const items = values || []
     if (items.length === 0) {

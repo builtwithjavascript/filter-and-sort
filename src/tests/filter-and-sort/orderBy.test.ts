@@ -9,11 +9,7 @@ describe('orderBy', () => {
     const direction = -1
     const items = getTestData()
 
-    const sorted = orderBy(
-      items,
-      propertyToSortBy,
-      direction
-    )
+    const sorted = orderBy(items, propertyToSortBy, direction)
 
     expect(sorted[0].id).toEqual(3)
     expect(sorted[1].id).toEqual(2)
@@ -25,11 +21,7 @@ describe('orderBy', () => {
     const direction = 1
     const items = getTestData()
 
-    const sorted = orderBy(
-      items,
-      propertyToSortBy,
-      direction
-    )
+    const sorted = orderBy(items, propertyToSortBy, direction)
 
     expect(sorted[0].id).toEqual(1)
     expect(sorted[1].id).toEqual(2)

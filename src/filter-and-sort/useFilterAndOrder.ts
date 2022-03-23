@@ -26,10 +26,6 @@ export const useFilterAndOrder = <T = void>() => {
       })
     }
 
-    return sort(
-      filtered,
-      propertyToSortBy,
-      args.direction
-    )
+    return sort(filtered, propertyToSortBy, args.direction)
   }
 }
